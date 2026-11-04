@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/x11/xcb-util
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xcb-util
 
 curl -LO https://xcb.freedesktop.org/dist/xcb-util-0.4.1.tar.xz
 tar -xf xcb-util-0.4.1.tar.xz

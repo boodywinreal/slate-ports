@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/x11/xterm
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xterm
 curl -LO https://invisible-mirror.net/archives/xterm/xterm-412.tgz
 tar -xf xterm-412.tgz
 cd xterm-412

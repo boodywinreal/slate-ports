@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/lib/dbus
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/dbus
 
 curl -LO https://dbus.freedesktop.org/releases/dbus/dbus-1.16.2.tar.xz
 tar -xf dbus-1.16.2.tar.xz

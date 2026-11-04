@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/xrandr
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xrandr
 
 curl -LO https://xorg.freedesktop.org/releases/individual/app/xrandr-1.5.4.tar.xz
 tar -xf xrandr-1.5.4.tar.xz

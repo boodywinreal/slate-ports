@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/system/usbutils
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/system/usbutils
 curl -LO https://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-019.tar.xz
 tar -xf usbutils-019.tar.xz
 cd usbutils-019

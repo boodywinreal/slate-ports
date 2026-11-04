@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/utils/fastfetch
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/utils/fastfetch
 
 curl -LO https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.70.0.tar.gz
 tar -xf 2.70.0.tar.gz

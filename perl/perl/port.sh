@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/perl/perl
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/perl/perl
 
 curl -LO https://www.cpan.org/src/5.0/perl-5.42.0.tar.gz
 

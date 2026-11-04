@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/lib/libtirpc
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/libtirpc
 
 curl -LO https://downloads.sourceforge.net/project/libtirpc/libtirpc/1.3.8/libtirpc-1.3.8.tar.bz2
 tar -xf libtirpc-1.3.8.tar.bz2

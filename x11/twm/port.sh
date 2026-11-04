@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/twm
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/twm
 
 git clone --depth 1 https://gitlab.freedesktop.org/xorg/app/twm.git
 

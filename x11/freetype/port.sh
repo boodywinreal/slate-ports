@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/freetype
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/freetype
 curl -LO https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz
 tar -xf freetype-2.15.0.tar.xz
 cd freetype-2.15.0

@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/system/e2fsprogs
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/system/e2fsprogs
 
 curl -LO https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/1.47.4/e2fsprogs-1.47.4.tar.gz
 tar -xf e2fsprogs-1.47.4.tar.gz

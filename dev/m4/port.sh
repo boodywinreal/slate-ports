@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/dev/m4
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/dev/m4
 
 curl -LO https://ftp.gnu.org/gnu/m4/m4-1.4.21.tar.xz
 tar -xf m4-1.4.21.tar.xz

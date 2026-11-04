@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/net/wpa-supplicant
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/net/wpa-supplicant
 
 curl -LO https://w1.fi/releases/wpa_supplicant-2.11.tar.gz
 tar -xf wpa_supplicant-2.11.tar.gz

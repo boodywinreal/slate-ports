@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/lib/util-macros
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/util-macros
 
 curl -LO https://xorg.freedesktop.org/archive/individual/util/util-macros-1.20.2.tar.xz
 

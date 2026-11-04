@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/utils/neofetch
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/utils/neofetch
 
 git clone --depth=1 https://github.com/dylanaraps/neofetch.git
 

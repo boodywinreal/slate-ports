@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/lib/zstd
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/zstd
 
 curl -LO https://github.com/facebook/zstd/releases/download/v1.5.7/zstd-1.5.7.tar.gz
 

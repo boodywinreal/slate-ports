@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/libXau
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/libXau
 
 curl -LO https://xorg.freedesktop.org/releases/individual/lib/libXau-1.0.12.tar.xz
 tar -xf libXau-1.0.12.tar.xz

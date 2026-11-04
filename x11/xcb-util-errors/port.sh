@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/x11/xcb-util-errors
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xcb-util-errors
 
 curl -LO https://xorg.freedesktop.org/archive/individual/lib/xcb-util-errors-1.0.1.tar.xz
 tar -xf xcb-util-errors-1.0.1.tar.xz

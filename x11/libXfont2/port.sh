@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/libXfont2
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/libXfont2
 
 curl -LO https://mirror.csclub.uwaterloo.ca/x.org/individual/lib/libXfont2-2.0.6.tar.xz
 tar -xf libXfont2-2.0.6.tar.xz

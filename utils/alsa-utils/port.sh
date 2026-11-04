@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/utils/alsa-utils
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/utils/alsa-utils
 
 curl -LO https://www.alsa-project.org/files/pub/utils/alsa-utils-1.2.16.tar.bz2
 tar -xf alsa-utils-1.2.16.tar.bz2

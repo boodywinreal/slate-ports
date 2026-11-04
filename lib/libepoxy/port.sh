@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/x11
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11
 
 git clone --depth 1 https://github.com/anholt/libepoxy.git
 cd libepoxy

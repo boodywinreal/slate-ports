@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/lib/check
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/check
 curl -LO https://github.com/libcheck/check/releases/download/0.15.2/check-0.15.2.tar.gz
 tar -xf check-0.15.2.tar.gz
 cd check-0.15.2

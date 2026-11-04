@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/libevdev
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/libevdev
 
 curl -LO https://www.freedesktop.org/software/libevdev/libevdev-1.12.0.tar.xz
 tar -xf libevdev-1.12.0.tar.xz

@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/xinit
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xinit
 
 curl -LO https://xorg.freedesktop.org/releases/individual/app/xinit-1.4.4.tar.xz
 tar -xf xinit-1.4.4.tar.xz

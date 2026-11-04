@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/x11/xauth
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xauth
 curl -LO https://xorg.freedesktop.org/releases/individual/app/xauth-1.1.tar.gz
 tar -xf xauth-1.1.tar.gz
 cd xauth-1.1

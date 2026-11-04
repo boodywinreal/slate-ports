@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/x11/dunst
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/dunst
 
 curl -LO https://github.com/dunst-project/dunst/archive/refs/tags/v1.13.2.tar.gz
 tar -xf v1.13.2.tar.gz

@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/x11/xclip
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xclip
 
 curl -LO https://github.com/astrand/xclip/archive/0.13.tar.gz
 tar -xf 0.13.tar.gz

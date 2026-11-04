@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/net/rsync
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/net/rsync
 
 curl -LO https://download.samba.org/pub/rsync/src/rsync-3.5.1.tar.gz
 tar -xf rsync-3.5.1.tar.gz

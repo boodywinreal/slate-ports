@@ -1,6 +1,7 @@
 #!/bin/sh
 python3 -m pip install pytest evdev pyudev
-cd /usr/ports/lib/libwacom
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/libwacom
 curl -LO https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.14.0/libwacom-2.14.0.tar.xz
 tar -xf libwacom-2.14.0.tar.xz
 cd libwacom-2.14.0

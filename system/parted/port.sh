@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/system/parted
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/system/parted
 curl -LO https://ftp.gnu.org/gnu/parted/parted-3.8.tar.xz
 tar -xf parted-3.8.tar.xz
 cd parted-3.8

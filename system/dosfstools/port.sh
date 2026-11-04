@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/system/dosfstools
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/system/dosfstools
 
 curl -LO https://github.com/dosfstools/dosfstools/releases/download/v4.2/dosfstools-4.2.tar.gz
 

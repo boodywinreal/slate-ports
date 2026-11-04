@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/lib/libbsd
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/libbsd
 
 curl -LO https://libbsd.freedesktop.org/releases/libbsd-0.12.2.tar.xz
 tar -xf libbsd-0.12.2.tar.xz

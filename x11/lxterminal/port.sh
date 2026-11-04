@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/x11/lxterminal
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/lxterminal
 
 curl -LO https://downloads.sourceforge.net/lxde/lxterminal-0.4.1.tar.xz
 tar -xf lxterminal-0.4.1.tar.xz

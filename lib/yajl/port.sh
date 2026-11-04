@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/lib/yajl
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/yajl
 
 curl -LO https://github.com/lloyd/yajl/archive/refs/tags/2.1.0.tar.gz
 tar -xf 2.1.0.tar.gz

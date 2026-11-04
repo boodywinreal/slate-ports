@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/feh
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/feh
 
 git clone --depth 1 https://github.com/derf/feh.git
 

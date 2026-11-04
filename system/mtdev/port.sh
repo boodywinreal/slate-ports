@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/system/mtdev
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/system/mtdev
 git clone https://bitmath.se/org/git/mtdev.git/ 
 cd mtdev
 ./autogen.sh

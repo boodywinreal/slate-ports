@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/net/curl
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/net/curl
 
 curl -LO https://curl.se/download/curl-8.23.0.tar.xz
 tar -xf curl-8.23.0.tar.xz

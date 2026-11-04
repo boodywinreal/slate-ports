@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/utils/zip
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/utils/zip
 
 curl -LO https://downloads.sourceforge.net/infozip/unzip60.tgz
 curl -LO https://downloads.sourceforge.net/infozip/zip30.tar.gz

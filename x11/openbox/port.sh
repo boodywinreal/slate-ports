@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/openbox
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/openbox
 
 curl -LO https://openbox.org/dist/openbox/openbox-3.6.1.tar.xz
 tar -xf openbox-3.6.1.tar.xz

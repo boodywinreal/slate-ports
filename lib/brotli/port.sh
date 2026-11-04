@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/lib/brotli
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/brotli
 
 curl -LO https://github.com/google/brotli/archive/refs/tags/v1.2.0.tar.gz
 tar -xf v1.2.0.tar.gz

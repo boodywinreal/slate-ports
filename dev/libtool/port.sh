@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/dev/libtool
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/dev/libtool
 
 curl -LO https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz
 tar -xf libtool-2.5.4.tar.xz

@@ -2,7 +2,8 @@
 #!!!!!!!!!!!!!!!! Experimental
 set -e
 
-cd /usr/ports/system/linux-firmware
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/system/linux-firmware
 
 if [ ! -d linux-firmware/.git ]; then
     git clone --depth 1 https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git linux-firmware

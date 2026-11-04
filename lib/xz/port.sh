@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/lib/xz
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/xz
 
 curl -LO https://tukaani.org/xz/xz-5.8.1.tar.gz
 

@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/net/openssh
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/net/openssh
 
 curl -LO https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p1.tar.gz
 tar -xf openssh-10.6p1.tar.gz

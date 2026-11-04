@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/dev/python
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/dev/python
 
 curl -LO https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tgz
 

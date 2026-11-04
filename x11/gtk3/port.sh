@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/x11/gtk3
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/gtk3
 
 curl -LO https://download.gnome.org/sources/gtk/3.24/gtk-3.24.52.tar.xz
 tar -xf gtk-3.24.52.tar.xz

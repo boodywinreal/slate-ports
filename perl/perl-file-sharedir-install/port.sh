@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/perl/perl-file-sharedir-install
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/perl/perl-file-sharedir-install
 curl -LO https://cpan.metacpan.org/authors/id/E/ET/ETHER/File-ShareDir-Install-0.14.tar.gz
 tar -xf File-ShareDir-Install-0.14.tar.gz
 cd File-ShareDir-Install-0.14

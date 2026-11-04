@@ -1,7 +1,7 @@
 #!/bin/sh
 set -o pipefail
 
-PORTS_DIR="/usr/ports"
+export PORTS_DIR="/usr/ports"
 
 # Scratch space for staging installs. Override with SLATE_TMPDIR=...
 STAGE_PARENT="${SLATE_TMPDIR:-/var/tmp}"

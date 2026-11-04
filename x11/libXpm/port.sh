@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/libXpm
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/libXpm
 
 curl -LO https://xorg.freedesktop.org/releases/individual/lib/libXpm-3.5.20.tar.xz
 tar -xf libXpm-3.5.20.tar.xz

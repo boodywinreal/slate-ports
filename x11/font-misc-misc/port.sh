@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/x11/font-misc-misc
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/font-misc-misc
 curl -LO https://xorg.freedesktop.org/releases/individual/font/font-misc-misc-1.1.3.tar.xz
 tar -xf font-misc-misc-1.1.3.tar.xz
 cd font-misc-misc-1.1.3

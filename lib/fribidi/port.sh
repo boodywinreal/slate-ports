@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/lib/fribidi
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/fribidi
 
 VERSION=1.0.16
 

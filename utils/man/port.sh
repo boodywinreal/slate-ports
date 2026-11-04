@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/utils/mandoc
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/utils/mandoc
 
 curl -LO https://mandoc.bsd.lv/snapshots/mandoc-1.14.6.tar.gz
 tar -xf mandoc-1.14.6.tar.gz

@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/xclock
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xclock
 
 git clone --depth 1 https://gitlab.freedesktop.org/xorg/app/xclock.git
 

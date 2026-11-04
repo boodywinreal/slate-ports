@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/x11/startup-notification
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/startup-notification
 
 curl -LO https://www.freedesktop.org/software/startup-notification/releases/startup-notification-0.12.tar.gz
 tar -xf startup-notification-0.12.tar.gz

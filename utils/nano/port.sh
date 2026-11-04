@@ -1,6 +1,7 @@
 #!/bin/sh
 set -e
-cd /usr/ports/utils/nano
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/utils/nano
 curl -LO https://ftp.gnu.org/gnu/nano/nano-9.3.tar.xz
 tar -xf nano-9.3.tar.xz
 cd nano-9.3

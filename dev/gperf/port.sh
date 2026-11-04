@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/dev/gperf
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/dev/gperf
 
 curl -LO http://ftp.gnu.org/pub/gnu/gperf/gperf-3.3.tar.gz 
 tar -xf gperf-3.3.tar.gz

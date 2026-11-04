@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports/x11/xtrans
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/xtrans
 git clone --depth 1 https://gitlab.freedesktop.org/xorg/lib/libxtrans.git
 cd libxtrans
 ./autogen.sh

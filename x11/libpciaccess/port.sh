@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/libpciaccess
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/libpciaccess
 
 git clone --depth 1 https://gitlab.freedesktop.org/xorg/lib/libpciaccess.git
 

@@ -1,7 +1,8 @@
 #!/bin/sh
 set -e
 
-cd /usr/ports/dev/patch
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/dev/patch
 
 curl -LO https://ftp.gnu.org/gnu/patch/patch-2.8.tar.xz
 tar -xf patch-2.8.tar.xz

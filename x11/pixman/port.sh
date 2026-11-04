@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /usr/ports/x11/pixman
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/pixman
 
 curl -LO https://cairographics.org/releases/pixman-0.46.4.tar.xz
 tar -xf pixman-0.46.4.tar.xz

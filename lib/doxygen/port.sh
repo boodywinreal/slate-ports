@@ -1,5 +1,6 @@
 #!/bin/sh
-cd /usr/ports
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR
 curl -LO https://www.doxygen.nl/files/doxygen-1.14.0.src.tar.gz
 tar -xf doxygen-1.14.0.src.tar.gz
 cd doxygen-1.14.0

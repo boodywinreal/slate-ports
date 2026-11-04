@@ -1,6 +1,7 @@
 #!/bin/sh
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
-cd /usr/ports/x11/libX11
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/x11/libX11
 
 curl -LO https://xorg.freedesktop.org/releases/individual/lib/libX11-1.8.tar.xz
 tar -xf libX11-1.8.tar.xz
