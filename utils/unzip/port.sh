@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/utils/zip
 
 curl -LO https://downloads.sourceforge.net/infozip/unzip60.tgz

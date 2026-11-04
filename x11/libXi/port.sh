@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd /usr/ports/x11/libXi
 curl -LO https://xorg.freedesktop.org/releases/individual/lib/libXi-1.8.4.tar.xz

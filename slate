@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -o pipefail
 
 PORTS_DIR="/usr/ports"
@@ -223,13 +223,13 @@ case "$1" in
                 PORT_NAME="$PORT_NAME" \
                 PORT_DIR="$PORT_DIR" \
                 DESTDIR="$STAGE" \
-                bash "$PORT_SCRIPT") > "$LOG_FILE" 2>&1
+                sh -c "$PORT_SCRIPT") > "$LOG_FILE" 2>&1
         else
             (cd "$PORT_DIR" &&
                 PORT_NAME="$PORT_NAME" \
                 PORT_DIR="$PORT_DIR" \
                 DESTDIR="$STAGE" \
-                bash "$PORT_SCRIPT")
+                sh -c "$PORT_SCRIPT")
         fi
         result=$?
 

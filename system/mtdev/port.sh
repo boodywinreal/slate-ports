@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/system/mtdev
 git clone https://bitmath.se/org/git/mtdev.git/ 
 cd mtdev

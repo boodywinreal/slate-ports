@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/lib/gudev
 git clone --depth 1 https://gitlab.gnome.org/GNOME/libgudev.git
 cd libgudev

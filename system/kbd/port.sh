@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 cd /usr/ports/system/kbd
 curl -LO https://www.kernel.org/pub/linux/utils/kbd/kbd-2.10.0.tar.xz

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/lib/libtirpc
 
 curl -LO https://downloads.sourceforge.net/project/libtirpc/libtirpc/1.3.8/libtirpc-1.3.8.tar.bz2

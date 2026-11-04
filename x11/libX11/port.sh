@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
 cd /usr/ports/x11/libX11
 

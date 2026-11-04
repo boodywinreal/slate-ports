@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd /usr/ports/x11/libdrm
 #thanks LFS for this!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111!1!

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd /usr/ports/x11
 curl -LO https://xorg.freedesktop.org/archive/individual/lib/libxcb-1.17.0.tar.xz

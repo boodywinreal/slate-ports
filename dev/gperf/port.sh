@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/dev/gperf
 
 curl -LO http://ftp.gnu.org/pub/gnu/gperf/gperf-3.3.tar.gz 

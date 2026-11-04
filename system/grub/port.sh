@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 cd /usr/ports/system/grub
 curl -LO https://ftp.gnu.org/gnu/grub/grub-2.14.tar.xz

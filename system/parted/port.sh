@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 cd /usr/ports/system/parted
 curl -LO https://ftp.gnu.org/gnu/parted/parted-3.8.tar.xz

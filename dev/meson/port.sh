@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/dev/meson
 
 curl -LO https://github.com/mesonbuild/meson/archive/refs/tags/1.12.1.tar.gz

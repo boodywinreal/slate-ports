@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/lib/glib
 curl -LO https://download.gnome.org/sources/glib/2.90/glib-2.90.1.tar.xz
 tar -xf glib-2.90.1.tar.xz

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/utils/htop
 git clone --depth=1 https://github.com/htop-dev/htop.git
 cd htop

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 set -e
 cd /usr/ports/net/ethtool
 curl -LO https://kernel.org/pub/software/network/ethtool/ethtool-7.2.tar.xz

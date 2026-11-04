@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/misc/cmatrix
 curl -LO https://github.com/abishekvashok/cmatrix/archive/refs/tags/v2.0.tar.gz
 tar -xf v2.0.tar.gz

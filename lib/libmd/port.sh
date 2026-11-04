@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /usr/ports/lib/libmd
 
 curl -LO https://libbsd.freedesktop.org/releases/libmd-1.1.0.tar.xz

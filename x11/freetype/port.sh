@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cd /usr/ports/x11/freetype
 curl -LO https://download.savannah.gnu.org/releases/freetype/freetype-2.15.0.tar.xz
