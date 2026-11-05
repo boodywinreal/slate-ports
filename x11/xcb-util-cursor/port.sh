@@ -9,5 +9,5 @@ cd xcb-util-cursor-0.1.5
 
 ./configure --prefix=/usr --disable-static
 
-make -j"$(nproc)"
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install

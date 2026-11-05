@@ -9,6 +9,6 @@ cd pixman-0.46.4
 
 meson setup build --prefix=/usr
 
-meson compile -C build -j"$(nproc)"
+meson compile -C build -j"$MAKETHREADS"
 
 DESTDIR="$DESTDIR" meson install -C build

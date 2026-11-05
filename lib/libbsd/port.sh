@@ -10,6 +10,6 @@ cd libbsd-0.12.2
     --prefix=/usr \
     --disable-static
 
-make
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install
 echo "#include <bsd/sys/queue.h>" > /usr/include/sys/queue.h

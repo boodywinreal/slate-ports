@@ -26,5 +26,5 @@ CONFIG_MATCH_IFACE=y
 CONFIG_BACKEND=file
 EOF
 
-make BINDIR=/usr/sbin
+make BINDIR=/usr/sbin -j"$MAKETHREADS"
 make BINDIR=/usr/sbin DESTDIR="$DESTDIR" install

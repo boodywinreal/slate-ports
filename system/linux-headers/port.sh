@@ -8,7 +8,7 @@ tar -xf linux-6.18.60.tar.xz
 
 cd linux-6.18.60
 
-make mrproper
+make mrproper -j"$MAKETHREADS"
 
 make headers_install \
     ARCH=x86 \

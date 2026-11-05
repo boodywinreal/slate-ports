@@ -10,5 +10,5 @@ cd libmd-1.1.0
     --prefix=/usr \
     --disable-static
 
-make
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install

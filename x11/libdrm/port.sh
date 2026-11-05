@@ -9,6 +9,6 @@ cd libdrm-2.4.134
 
 meson setup build --prefix=/usr
 
-meson compile -C build -j"$(nproc)"
+meson compile -C build -j"$MAKETHREADS"
 
 DESTDIR="$DESTDIR" meson install -C build

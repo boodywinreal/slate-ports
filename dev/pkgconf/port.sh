@@ -19,6 +19,6 @@ CC=cross-musl-gcc \
     --with-system-includedir=/usr/include \
     --with-pkg-config-dir=/usr/lib/pkgconfig:/usr/share/pkgconfig
 
-make -j"$(nproc)"
+make  -j"$MAKETHREADS"
 make install DESTDIR="${DESTDIR:-}"
 

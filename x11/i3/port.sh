@@ -13,6 +13,6 @@ meson setup .. \
     --wrap-mode=nofallback \
     -Ddocs=false \
     -Dmans=false
-ninja -j"$(nproc)"
+ninja -j"$MAKETHREADS"
 DESTDIR="$DESTDIR" ninja install
 

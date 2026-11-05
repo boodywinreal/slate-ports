@@ -12,6 +12,6 @@ meson setup .. \
     --buildtype=release \
     --wrap-mode=nofallback
 
-ninja -j"$(nproc)"
+ninja -j"$MAKETHREADS"
 DESTDIR="$DESTDIR" ninja install
 

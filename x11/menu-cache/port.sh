@@ -9,5 +9,5 @@ cd menu-cache-1.1.0
 
 ./configure --prefix=/usr --disable-static
 
-make
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install

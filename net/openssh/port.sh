@@ -4,9 +4,9 @@ set -e
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd $PORTS_DIR/net/openssh
 
-curl -LO https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p1.tar.gz
-tar -xf openssh-10.6p1.tar.gz
-cd openssh-10.6p1
+curl -LO https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.6p2.tar.gz
+tar -xf openssh-10.6p2.tar.gz
+cd openssh-10.6p2
 
 ./configure \
     --prefix=/usr \
@@ -22,7 +22,7 @@ cd openssh-10.6p1
     --without-kerberos5 \
     --without-libedit
 
-make -j"$(nproc)"
+make -j"$MAKETHREADS"
 
 make DESTDIR="$DESTDIR" install
 

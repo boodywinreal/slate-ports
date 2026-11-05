@@ -13,5 +13,5 @@ meson setup build \
     --buildtype=release \
     -Dintrospection=disabled
 
-ninja -C build -j"$(nproc)"
+ninja -C build -j"$MAKETHREADS"
 DESTDIR="$DESTDIR" ninja -C build install

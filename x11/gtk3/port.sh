@@ -17,5 +17,5 @@ meson setup build \
     -Dwayland_backend=false \
     -Dx11_backend=true
 
-ninja -C build -j"$(nproc)"
+ninja -C build -j"$MAKETHREADS"
 DESTDIR="$DESTDIR" ninja -C build install

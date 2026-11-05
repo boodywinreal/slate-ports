@@ -16,6 +16,6 @@ LN="ln -sf"
 EOF
 
 ./configure
-make
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install
 

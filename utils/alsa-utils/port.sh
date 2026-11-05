@@ -13,5 +13,5 @@ cd alsa-utils-1.2.16
     --disable-xmlto \
     --with-curses=ncursesw
 
-make
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install

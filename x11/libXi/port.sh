@@ -8,6 +8,6 @@ cd libXi-1.8.4
 
 ./configure --prefix=/usr
 
-make -j"$(nproc)"
+make -j"$MAKETHREADS"
 
 make DESTDIR="$DESTDIR" install

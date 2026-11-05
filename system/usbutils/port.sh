@@ -11,5 +11,5 @@ meson setup build \
     --prefix=/usr \
     --buildtype=release
 
-ninja -C build -j"$(nproc)"
+ninja -C build -j"$MAKETHREADS"
 DESTDIR="$DESTDIR" ninja -C build install

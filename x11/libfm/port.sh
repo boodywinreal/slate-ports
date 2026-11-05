@@ -9,5 +9,5 @@ cd libfm-1.3.2
 
 ./configure --prefix=/usr --sysconfdir=/etc --with-gtk=3 --disable-static
 
-make
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install

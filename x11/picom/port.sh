@@ -13,5 +13,5 @@ meson setup build \
     -Dopengl=false \
     -Dregex=false
 
-ninja -C build
+ninja -C build -j"$MAKETHREADS"
 DESTDIR="$DESTDIR" ninja -C build install

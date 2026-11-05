@@ -13,5 +13,5 @@ cd xeyes-1.3.0
     --sysconfdir=/etc \
     --localstatedir=/var
 
-make
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install

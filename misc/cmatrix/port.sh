@@ -8,5 +8,5 @@ cd cmatrix-2.0
 ./autogen.sh
 ./configure --prefix=/usr
 
-make -j"$(nproc)"
+make -j"$MAKETHREADS"
 DESTDIR="$DESTDIR" make install

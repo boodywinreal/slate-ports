@@ -11,5 +11,5 @@ cd xclip-0.13
 autoreconf -fi
 ./configure --prefix=/usr
 
-make -j"$(nproc)"
+make -j"$MAKETHREADS"
 make DESTDIR="$DESTDIR" install install.man

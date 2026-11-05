@@ -38,7 +38,7 @@ CXX=g++ \
     --disable-libgomp \
     --disable-libatomic
 
-make -j"$(nproc)"
+make  -j"$MAKETHREADS"
 
 make DESTDIR="$DESTDIR" install
 

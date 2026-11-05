@@ -14,6 +14,6 @@ cd libXaw
     --enable-shared 
     --enable-static
 
-make -j"$(nproc)"
+make -j"$MAKETHREADS"
 
 make DESTDIR="$DESTDIR" install
