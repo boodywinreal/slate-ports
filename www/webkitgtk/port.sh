@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 set -e
-cd /usr/ports/www/webkitgtk
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/www/webkitgtk
 curl -LO https://webkitgtk.org/releases/webkitgtk-2.54.2.tar.xz
 tar -xf webkitgtk-2.54.2.tar.xz
 cd webkitgtk-2.54.2

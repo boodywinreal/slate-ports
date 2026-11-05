@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 set -e
-cd /usr/ports/system/libseccomp
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/system/libseccomp
 curl -LO https://github.com/seccomp/libseccomp/releases/download/v2.6.1/libseccomp-2.6.1.tar.gz
 tar -xf libseccomp-2.6.1.tar.gz
 cd libseccomp-2.6.1

@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 set -e
-cd /usr/ports/lib/libpsl
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/libpsl
 curl -LO https://github.com/rockdaboot/libpsl/releases/download/0.21.5/libpsl-0.21.5.tar.gz
 tar -xf libpsl-0.21.5.tar.gz
 cd libpsl-0.21.5

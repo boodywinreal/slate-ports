@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 set -e
-cd /usr/ports/dev/which
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/dev/which
 curl -LO https://ftp.gnu.org/gnu/which/which-2.25.tar.gz
 tar -xf which-2.25.tar.gz
 cd which-2.25

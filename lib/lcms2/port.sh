@@ -1,6 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 set -e
-cd /usr/ports/lib/lcms2
+PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd $PORTS_DIR/lib/lcms2
 curl -LO https://downloads.sourceforge.net/project/lcms/lcms/2.19/lcms2-2.19.tar.gz
 tar -xf lcms2-2.19.tar.gz
 cd lcms2-2.19
