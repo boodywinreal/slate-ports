@@ -9,3 +9,4 @@ slate install dev/libtool
 slate install dev/bison
 slate install dev/flex
 slate install dev/patch
+slate install dev/gawk
