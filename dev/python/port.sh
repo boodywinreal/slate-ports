@@ -24,7 +24,7 @@ ac_cv_func_uuid_generate_time_safe=no ./configure \
 
 sed -i 's/uuid_generate_time_safe(uuid)/0/' Modules/_uuidmodule.c
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 
 ln -sf python3.13 "$DESTDIR/usr/bin/python"

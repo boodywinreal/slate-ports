@@ -9,5 +9,5 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./autogen.sh
 ./configure --prefix=/usr
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" make install

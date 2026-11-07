@@ -13,5 +13,5 @@ sed -i 's|#include <sys/queue.h>|#include <bsd/sys/queue.h>|' $(grep -rl '#inclu
     --disable-gssapi \
     --disable-authdes
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

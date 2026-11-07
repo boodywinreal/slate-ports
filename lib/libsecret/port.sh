@@ -9,5 +9,5 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 meson setup build --prefix=/usr \
     -Dgtk_doc=false -Dmanpage=false \
     -Dintrospection=false -Dvapi=false -Dtests=false
-ninja -C build -j"$MAKETHREADS"
+ninja -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" ninja -C build install

@@ -11,6 +11,6 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
     --prefix=/usr \
     --disable-static
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 echo "#include <bsd/sys/queue.h>" > /usr/include/sys/queue.h

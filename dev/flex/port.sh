@@ -14,6 +14,6 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
     --prefix=/usr \
     --disable-nls
 
-make  -j"$MAKETHREADS"
+make  -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 

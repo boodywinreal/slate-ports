@@ -17,5 +17,5 @@ meson setup build \
     -Dman=false \
     -Dtests=false
 
-ninja -C build -j"$MAKETHREADS"
+ninja -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" ninja -C build install

@@ -24,7 +24,7 @@ cd "/$PORTS_DIR"
     --without-acl \
     --without-attr
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 
 chmod 4755 "$DESTDIR/usr/bin/passwd"

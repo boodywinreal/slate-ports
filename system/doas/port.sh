@@ -6,7 +6,7 @@ tar -xf opendoas-6.8.2.tar.gz
 cd "$(tar -tf opendoas-6.8.2.tar.gz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./configure --prefix=/usr --sysconfdir=/etc --with-shadow --without-pam
-make clean -j"$MAKETHREADS"
-make nproc)" -j"$MAKETHREADS"
+make clean -j"${MAKETHREADS:-$(nproc)}"
+make nproc)" -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 echo "Doas install completed"

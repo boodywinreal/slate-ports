@@ -9,5 +9,5 @@ cd "$(basename "$(echo "$(grep -oE "https?://[^ ]+" <<< "&" | tail -1)" | sed "s
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
 meson setup build --prefix=/usr -Dtests=false
-meson compile -C build -j"$MAKETHREADS"
+meson compile -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" meson install -C build

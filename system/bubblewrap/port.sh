@@ -7,5 +7,5 @@ tar -xf bubblewrap-0.13.1.tar.xz
 cd "$(tar -tf bubblewrap-0.13.1.tar.xz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 meson setup build --prefix=/usr -Dtests=false
-ninja -C build -j"$MAKETHREADS"
+ninja -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" ninja -C build install

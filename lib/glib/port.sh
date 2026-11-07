@@ -6,5 +6,5 @@ tar -xf glib-2.90.1.tar.xz
 cd "$(tar -tf glib-2.90.1.tar.xz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 meson setup build --prefix=/usr -Dtests=false
-meson compile -C build -j"$MAKETHREADS"
+meson compile -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" meson install -C build

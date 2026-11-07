@@ -16,6 +16,6 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
     --disable-zstd \
     --disable-lz4
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 

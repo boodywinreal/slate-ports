@@ -10,6 +10,6 @@ cd "$(tar -tf openssl-3.5.4.tar.gz | head -1 | cut -d/ -f1)"
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./Configure --prefix=/usr --openssldir=/etc/ssl --libdir=lib shared
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 

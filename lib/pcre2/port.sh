@@ -5,5 +5,5 @@ curl -LO https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.44/pcr
 tar -xjf pcre2-10.44.tar.bz2
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./configure --prefix=/usr
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

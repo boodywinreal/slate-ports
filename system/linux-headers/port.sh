@@ -9,7 +9,7 @@ cd "$(tar -tf linux-6.18.60.tar.xz | head -1 | cut -d/ -f1)"
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
-make mrproper -j"$MAKETHREADS"
+make mrproper -j"${MAKETHREADS:-$(nproc)}"
 
 make headers_install \
     ARCH=x86 \

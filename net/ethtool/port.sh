@@ -7,5 +7,5 @@ tar -xf ethtool-7.2.tar.xz
 cd "$(tar -tf ethtool-7.2.tar.xz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./configure --prefix=/usr
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

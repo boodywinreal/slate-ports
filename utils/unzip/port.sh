@@ -11,11 +11,11 @@ tar -xf zip30.tar.gz
 cd "$(tar -tf zip30.tar.gz | head -1 | cut -d/ -f1)"
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-make -f unix/Makefile generic -j"$MAKETHREADS"
+make -f unix/Makefile generic -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" -f unix/Makefile prefix=/usr install
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-make -f unix/Makefile generic -j"$MAKETHREADS"
+make -f unix/Makefile generic -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" -f unix/Makefile prefix=/usr install
 

@@ -6,6 +6,6 @@ curl -LO https://ftp.gnu.org/gnu/grub/grub-2.14.tar.xz
 tar -xf grub-2.14.tar.xz
 cd "$(tar -tf grub-2.14.tar.xz | head -1 | cut -d/ -f1)"
 ./configure --prefix=/usr --sysconfdir=/etc --disable-werror --disable-nls --with-platform=pc --target=i386
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 make install DESTDIR="$DESTDIR"

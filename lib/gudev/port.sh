@@ -7,5 +7,5 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig
 meson setup build --prefix=/usr -Dtests=disabled -Dintrospection=disabled
 export PKG_CONFIG_PATH=/usr/lib64/pkgconfig:/usr/lib/pkgconfig:/usr/local/lib/pkgconfig:/usr/share/pkgconfig
-meson compile -C build -j"$MAKETHREADS"
+meson compile -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" meson install -C build

@@ -10,12 +10,12 @@ tar -xf libcap-2.78.tar.xz
 cd "$(tar -tf libcap-2.78.tar.xz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
-make \ -j"$MAKETHREADS"
+make \ -j"${MAKETHREADS:-$(nproc)}"
     prefix=/usr \
     lib=lib \
     RAISE_SETFCAP=no
 
-make \ -j"$MAKETHREADS"
+make \ -j"${MAKETHREADS:-$(nproc)}"
     prefix=/usr \
     lib=lib \
     RAISE_SETFCAP=no \

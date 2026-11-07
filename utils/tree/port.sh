@@ -8,6 +8,6 @@ cd "$(basename "$(echo "$(grep -oE "https?://[^ ]+" <<< "&" | tail -1)" | sed "s
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 
 make DESTDIR="$DESTDIR" install

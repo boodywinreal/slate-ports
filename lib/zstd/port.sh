@@ -9,6 +9,6 @@ tar -xf zstd-1.5.7.tar.gz
 cd "$(tar -tf zstd-1.5.7.tar.gz | head -1 | cut -d/ -f1)"
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-make PREFIX=/usr -j"$MAKETHREADS"
+make PREFIX=/usr -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install PREFIX=/usr
 

@@ -8,5 +8,5 @@ cd "$(tar -tf gstreamer-1.28.8.tar.xz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 meson setup build --prefix=/usr \
     -Dtests=disabled -Dexamples=disabled -Dbenchmarks=disabled
-ninja -C build -j"$MAKETHREADS"
+ninja -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" ninja -C build install

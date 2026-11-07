@@ -7,5 +7,5 @@ tar -xf sqlite-autoconf-3500400.tar.gz
 cd "$(tar -tf sqlite-autoconf-3500400.tar.gz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./configure --prefix=/usr --enable-shared --disable-static
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

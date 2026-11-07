@@ -10,6 +10,6 @@ cd "$(tar -tf xz-5.8.1.tar.gz | head -1 | cut -d/ -f1)"
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./configure --prefix=/usr --disable-static
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 

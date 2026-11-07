@@ -12,5 +12,5 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
     --sysconfdir=/etc \
     --sbindir=/usr/sbin
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

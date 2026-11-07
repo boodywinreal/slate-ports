@@ -7,5 +7,5 @@ tar -xf farbfeld-4.tar.gz
 cd "$(tar -tf farbfeld-4.tar.gz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make PREFIX=/usr DESTDIR="$DESTDIR" install

@@ -14,5 +14,5 @@ cmake -S . -B build -G Ninja \
     -DWEBP_BUILD_CWEBP=OFF \
     -DWEBP_BUILD_DWEBP=OFF \
     -DWEBP_BUILD_EXTRAS=OFF
-ninja -C build -j"$MAKETHREADS"
+ninja -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" ninja -C build install

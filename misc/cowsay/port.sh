@@ -12,6 +12,6 @@ tar -xzf "$WORK/src.tar.gz" -C "$WORK" --strip-components=1
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
-make PREFIX=/usr -j"$MAKETHREADS"
+make PREFIX=/usr -j"${MAKETHREADS:-$(nproc)}"
 
 make DESTDIR="$DESTDIR" PREFIX=/usr install

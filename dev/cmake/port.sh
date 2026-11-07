@@ -15,6 +15,6 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
     --parallel="$(nproc)" \
     -- -DCMAKE_USE_OPENSSL=OFF
 
-make  -j"$MAKETHREADS"
+make  -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 

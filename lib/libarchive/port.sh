@@ -12,5 +12,5 @@ cmake -S . -B build \
     -DCMAKE_BUILD_TYPE=Release \
     -DENABLE_TEST=OFF
 
-cmake --build build -j"$MAKETHREADS"
+cmake --build build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" cmake --install build

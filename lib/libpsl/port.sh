@@ -8,5 +8,5 @@ cd "$(tar -tf libpsl-0.21.5.tar.gz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 meson setup build --prefix=/usr --buildtype=release \
     -Ddocs=false -Dman=false -Dgtk_doc=false -Dtests=false
-ninja -C build -j"$MAKETHREADS"
+ninja -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" ninja -C build install

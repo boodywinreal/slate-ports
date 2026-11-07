@@ -6,7 +6,7 @@ cd htop
 cd "$(basename "$(echo "$(grep -oE "https?://[^ ]+" <<< "&" | tail -1)" | sed "s/.git$//" | sed "s|.*/||")")"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./autogen.sh
-make clean -j"$MAKETHREADS"
+make clean -j"${MAKETHREADS:-$(nproc)}"
 ./configure --disable-unicode
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

@@ -29,6 +29,6 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
     --without-slang \
     --without-utempter
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 

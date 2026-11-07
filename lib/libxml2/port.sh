@@ -19,5 +19,5 @@ cd "$(tar -tf libxml2-2.15.4.tar.xz | head -1 | cut -d/ -f1)"
     --without-modules \
     --without-docs
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

@@ -12,6 +12,6 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 sh Configure -des -Dprefix=/usr
 sed -i 's/eaccess((p), (f))/faccessat(AT_FDCWD, (p), (f), AT_EACCESS)/' pp_sys.c
 sed -i '1i#include <fcntl.h>\n#include <unistd.h>' pp_sys.c
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install
 

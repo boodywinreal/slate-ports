@@ -17,5 +17,5 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
     --with-zstd \
     --disable-manpages
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

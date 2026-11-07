@@ -11,7 +11,7 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 make -f Makefile-libbz2_so
 make clean
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 
 make PREFIX="$DESTDIR/usr" install
 

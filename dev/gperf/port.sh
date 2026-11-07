@@ -8,5 +8,5 @@ cd "$(tar -tf gperf-3.3.tar.gz | head -1 | cut -d/ -f1)"
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 ./configure --prefix=/usr
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make install DESTDIR="${DESTDIR:-}"

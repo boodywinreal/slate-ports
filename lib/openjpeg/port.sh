@@ -12,5 +12,5 @@ cmake -S . -B build -G Ninja \
     -DBUILD_SHARED_LIBS=ON \
     -DBUILD_CODEC=OFF \
     -DBUILD_TESTING=OFF
-ninja -C build -j"$MAKETHREADS"
+ninja -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" ninja -C build install

@@ -15,5 +15,5 @@ PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
     --enable-obsolete-api=glibc \
     --disable-static
 
-make -j"$MAKETHREADS"
+make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

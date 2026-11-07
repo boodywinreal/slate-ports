@@ -11,5 +11,5 @@ meson setup build --prefix=/usr \
     -Dgtk_doc=disabled -Dintrospection=disabled \
     -Dopenh264=disabled -Dopenexr=disabled \
     -Dqt6=disabled -Dwayland=disabled
-ninja -C build -j"$MAKETHREADS"
+ninja -C build -j"${MAKETHREADS:-$(nproc)}"
 DESTDIR="$DESTDIR" ninja -C build install

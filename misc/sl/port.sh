@@ -6,7 +6,7 @@ tar -xf 5.02.tar.gz
 cd "$(tar -tf 5.02.tar.gz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
-make CC="${CC:-gcc}" \ -j"$MAKETHREADS"
+make CC="${CC:-gcc}" \ -j"${MAKETHREADS:-$(nproc)}"
     CFLAGS="${CFLAGS:--O2}" \
     LDFLAGS="-lncurses"
 
