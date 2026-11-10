@@ -1,18 +1,18 @@
-
 #!/bin/sh
 set -e
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-cd "/$PORTS_DIR"
+cd "$PORTS_DIR/system/musl-libc"
+
+VERSION=1.2.6
 
 # Download musl
-curl -fLO https://musl.libc.org/releases/musl-1.2.6.tar.gz
+curl -fLO https://musl.libc.org/releases/musl-$VERSION.tar.gz
+tar -xf musl-$VERSION.tar.gz
 
-tar -xf musl-1.2.6.tar.gz
-cd "$(tar -tf musl-1.2.6.tar.gz | head -1 | cut -d/ -f1)"
-PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 mkdir -p patches
-PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+
+cd patches
 
 curl -fL -o 0001-regex-overflow.patch \
     "https://git.musl-libc.org/cgit/musl/patch/?id=7813e9119eb5fe681b6750b8a033a0490bca0941"
@@ -29,16 +29,25 @@ curl -fL -o 0004-qsort-bounds.patch \
 curl -fL -o 0005-qsort-shift.patch \
     "https://git.musl-libc.org/cgit/musl/patch/?id=5122f9f3c99fee366167c5de98b31546312921ab"
 
-PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
+cd "../musl-$VERSION"
 
-for patchfile in patches/*.patch; do
-    echo "Applying ${patchfile}..."
+# Apply patches
+for patchfile in ../patches/*.patch; do
+    echo "Applying $patchfile..."
     patch -p1 < "$patchfile"
 done
 
-./configure
+# Configure
+./configure \
+    --prefix=/usr
 
+<<<<<<< Updated upstream
 make -j"${MAKETHREADS:-$(nproc)}"
+=======
+# Build
+make -j"${MAKETHREADS:-1}"
+>>>>>>> Stashed changes
 
+# Install
 make DESTDIR="$DESTDIR" install
 

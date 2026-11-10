@@ -3,9 +3,9 @@ set -e
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
-curl -LO https://github.com/libexpat/libexpat/releases/download/R_2_9_0/expat-2.9.0.tar.xz
-tar -xf expat-2.9.0.tar.xz
-cd "$(tar -tf expat-2.9.0.tar.xz | head -1 | cut -d/ -f1)"
+curl -LO https://github.com/libexpat/libexpat/releases/download/R_2_10_0/expat-2.10.0.tar.xz
+tar -xf expat-2.10.0.tar.xz
+cd "$(tar -tf expat-2.10.0.tar.xz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
 ./configure \
