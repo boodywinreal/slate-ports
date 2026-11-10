@@ -4,13 +4,28 @@ set -e
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
+if command -v gcc >/dev/null 2>&1; then
+    C="gcc"
+else
+    C="cc"
+fi
+if command -v g++ >/dev/null 2>&1; then
+    CXX="g++"
+else
+    CXX="c++"
+fi
+
+if command -v ccache >/dev/null 2>&1; then
+    C="ccache $C"
+    CXX="ccache $CXX"
+fi
 
 curl -LO https://ftp.gnu.org/gnu/libtool/libtool-2.5.4.tar.xz
 tar -xf libtool-2.5.4.tar.xz
 cd "$(tar -tf libtool-2.5.4.tar.xz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 
-./configure \
+./configure C="$C" CXX="$CXX" \
     --prefix=/usr \
     --disable-nls
 

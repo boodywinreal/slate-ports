@@ -1,6 +1,21 @@
 #!/bin/sh
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
+if command -v gcc >/dev/null 2>&1; then
+    C="gcc"
+else
+    C="cc"
+fi
+if command -v g++ >/dev/null 2>&1; then
+    CXX="g++"
+else
+    CXX="c++"
+fi
+
+if command -v ccache >/dev/null 2>&1; then
+    C="ccache $C"
+    CXX="ccache $CXX"
+fi
 
 curl -LO https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tgz
 tar -xf Python-3.13.7.tgz
@@ -14,7 +29,7 @@ export LDFLAGS="-L/usr/lib64 -L/usr/lib"
 export LD_LIBRARY_PATH=/usr/lib64:/usr/lib
 export BZIP2_CFLAGS="-I/usr/include"
 export BZIP2_LIBS="-L/usr/lib -lbz2"
-ac_cv_func_uuid_generate_time_safe=no ./configure \
+ac_cv_func_uuid_generate_time_safe=no ./configure C="$C" CXX="$CXX" \
   --prefix=/usr \
   --libdir=/usr/lib \
   --with-ensurepip=yes \

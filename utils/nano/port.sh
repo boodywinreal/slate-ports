@@ -2,10 +2,25 @@
 set -e
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
+if command -v gcc >/dev/null 2>&1; then
+    C="gcc"
+else
+    C="cc"
+fi
+if command -v g++ >/dev/null 2>&1; then
+    CXX="g++"
+else
+    CXX="c++"
+fi
+
+if command -v ccache >/dev/null 2>&1; then
+    C="ccache $C"
+    CXX="ccache $CXX"
+fi
 curl -LO https://ftp.gnu.org/gnu/nano/nano-9.3.tar.xz
 tar -xf nano-9.3.tar.xz
 cd "$(tar -tf nano-9.3.tar.xz | head -1 | cut -d/ -f1)"
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
-./configure --prefix=/usr --disable-nls
+./configure C="$C" CXX="$CXX" --prefix=/usr --disable-nls
 make -j"${MAKETHREADS:-$(nproc)}"
 make DESTDIR="$DESTDIR" install

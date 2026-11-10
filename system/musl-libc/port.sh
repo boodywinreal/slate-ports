@@ -38,7 +38,7 @@ for patchfile in ../patches/*.patch; do
 done
 
 # Configure
-./configure \
+./configure C="$C" CXX="$CXX" \
     --prefix=/usr
 
 <<<<<<< Updated upstream

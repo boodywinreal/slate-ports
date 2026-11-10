@@ -3,6 +3,21 @@ set -e
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
+if command -v gcc >/dev/null 2>&1; then
+    C="gcc"
+else
+    C="cc"
+fi
+if command -v g++ >/dev/null 2>&1; then
+    CXX="g++"
+else
+    CXX="c++"
+fi
+
+if command -v ccache >/dev/null 2>&1; then
+    C="ccache $C"
+    CXX="ccache $CXX"
+fi
 
 curl -LO https://github.com/c-ares/c-ares/releases/download/v1.34.9/c-ares-1.34.9.tar.gz
 tar -xf c-ares-1.34.9.tar.gz

@@ -8,7 +8,7 @@ curl -LO https://ftp.gnu.org/gnu/gawk/gawk-$VERSION.tar.xz
 tar -xf gawk-$VERSION.tar.xz
 cd gawk-$VERSION
 
-./configure \
+./configure C="$C" CXX="$CXX" \
     --prefix=/usr \
     --libexecdir=/usr/lib \
     --sysconfdir=/etc \

@@ -3,6 +3,21 @@ set -e
 
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
+if command -v gcc >/dev/null 2>&1; then
+    C="gcc"
+else
+    C="cc"
+fi
+if command -v g++ >/dev/null 2>&1; then
+    CXX="g++"
+else
+    CXX="c++"
+fi
+
+if command -v ccache >/dev/null 2>&1; then
+    C="ccache $C"
+    CXX="ccache $CXX"
+fi
 
 curl -LO https://ftp.gnu.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz
 tar -xf gcc-15.2.0.tar.xz
@@ -20,7 +35,7 @@ BUILD="$(../config.guess)"
 
 CC=gcc \
 CXX=g++ \
-../configure \
+../configure C="$C" CXX="$CXX" \
     --build="$BUILD" \
     --host="$BUILD" \
     --target="$TARGET" \
