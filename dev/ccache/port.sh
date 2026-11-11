@@ -24,7 +24,6 @@ curl -LO https://github.com/ccache/ccache/archive/refs/tags/v$VERSION\.tar.gz
 tar -xf v$VERSION\.tar.gz
 
 cd ccache-$VERSION
-make distclean
 export CPPFLAGS="-I/usr/include"
 export LDFLAGS="-L/usr/lib64 -L/usr/lib"
 export LD_LIBRARY_PATH=/usr/lib64:/usr/lib
