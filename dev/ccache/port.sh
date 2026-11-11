@@ -20,7 +20,7 @@ if command -v ccache >/dev/null 2>&1; then
 fi
 
 VERSION=4.14.3
-curl -LO https://github.com/ccache/ccache/archive/refs/tags/v$VERSION\.gz
+curl -LO https://github.com/ccache/ccache/archive/refs/tags/v$VERSION\.tar.gz
 tar -xf v$VERSION\.tar.gz
 
 cd ccache-$VERSION
