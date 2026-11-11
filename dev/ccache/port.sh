@@ -1,4 +1,6 @@
 #!/bin/sh
+set -e
+
 PORTS_DIR=${PORTS_DIR:-"/usr/ports"}
 cd "/$PORTS_DIR"
 if command -v gcc >/dev/null 2>&1; then
