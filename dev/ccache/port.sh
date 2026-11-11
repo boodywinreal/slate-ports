@@ -28,9 +28,7 @@ export CPPFLAGS="-I/usr/include"
 export LDFLAGS="-L/usr/lib64 -L/usr/lib"
 export LD_LIBRARY_PATH=/usr/lib64:/usr/lib
 
-sh autogen.sh
-./configure C="$C" CXX="$CXX" \
-    --prefix=/usr
-make -j"${MAKETHREADS:-$(nproc)}"
-make check
-make DESTDIR="$DESTDIR" install
+cmake --build $DESTDIR
+cd $DESTDIR
+make C="$C" CXX="$CXX"
+make install
